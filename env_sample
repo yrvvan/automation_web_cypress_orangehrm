@@ -1,0 +1,8 @@
+WEBSITE_URL=https://opensource-demo.orangehrmlive.com/web/index.php
+PASSWORD_ADMIN=admin123
+USERNAME_ADMIN=Admin
+PASSWORD_INVALID=123admin
+USERNAME_INVALID=Idman
+MATTERMOST_WEBHOOK=
+LOGIN_URL=/auth/login
+FORGOT_PASSWORD_URL=/auth/requestPasswordResetCode

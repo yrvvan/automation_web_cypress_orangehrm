@@ -1,0 +1,36 @@
+{
+    "name": "orangehrm-automation-web",
+    "version": "1.0.0",
+    "description": "Orange HRM Automation WEB",
+    "main": "index.js",
+    "scripts": {
+        "clean-reports": "rm -rf cypress/reports/results/*.json cypress/reports/features cypress/reports/index.html cypress/reports/* cypress/screenshots/* cypress/videos/*",
+        "cypress": "npm run clean-reports & ./node_modules/.bin/cypress-tags run --spec cypress/integration/*.feature",
+        "generate-report": "npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/output.json && npx marge cypress/reports/mochawesome/output.json -f report -o cypress/reports/mochawesome",
+        "cypress-ui": "./node_modules/.bin/cypress open",
+        "notify": "node ./cypress/helper/summary_helper.js"
+    },
+    "author": "https://github.com/yrvvan",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.7.2",
+        "cypress": "9.7.0",
+        "cypress-cucumber-preprocessor": "^4.3.1",
+        "cypress-multi-reporters": "^1.4.0"
+    },
+    "devDependencies": {
+        "cypress-xpath": "^2.0.1",
+        "mocha": "^8.1.1",
+        "mochawesome": "^6.3.1",
+        "mochawesome-merge": "^4.3.0",
+        "mochawesome-report-generator": "^6.2.0"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}
