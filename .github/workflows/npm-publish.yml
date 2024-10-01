@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npm run cypress
         env:
           WEBSITE_URL: ${{ env.WEBSITE_URL }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
