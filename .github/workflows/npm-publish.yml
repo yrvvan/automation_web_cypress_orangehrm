@@ -28,6 +28,15 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run
+        env:
+          WEBSITE_URL: ${{ env.WEBSITE_URL }}
+          PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
+          USERNAME_ADMIN: ${{ secrets.USERNAME_ADMIN }}
+          PASSWORD_INVALID: ${{ env.PASSWORD_INVALID }}
+          USERNAME_INVALID: ${{ env.USERNAME_INVALID }}
+          MATTERMOST_WEBHOOK: ${{ secrets.MATTERMOST_WEBHOOK }}
+          LOGIN_URL: ${{ env.LOGIN_URL }}
+          FORGOT_PASSWORD_URL: ${{ env.FORGOT_PASSWORD_URL }}
 
       - name: Upload Cypress screenshots on failure
         if: failure()
