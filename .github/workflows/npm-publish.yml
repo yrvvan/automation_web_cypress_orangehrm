@@ -54,9 +54,7 @@ jobs:
           FORGOT_PASSWORD_URL: ${{ env.FORGOT_PASSWORD_URL }}
 
       - name: Check Env
-        run: |
-          echo ${{ env.WEBSITE_URL }}
-          echo WEBSITE_URL + "bottom"
+        run: echo ${{ env.WEBSITE_URL }}
 
       - name: Upload Cypress screenshots on failure
         if: failure()
