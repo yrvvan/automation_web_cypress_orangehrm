@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check path
+        run: ls -la
+
       - name: Create .env file from GitHub environment variables
         run: |
           echo "WEBSITE_URL=${{ env.WEBSITE_URL }}" >> .env
