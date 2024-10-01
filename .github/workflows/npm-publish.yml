@@ -39,6 +39,7 @@ jobs:
         
       - name: Run Cypress tests
         run: npm run cypress
+        working-directory: ./cypress
         env: 
           WEBSITE_URL: ${{ env.WEBSITE_URL }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
